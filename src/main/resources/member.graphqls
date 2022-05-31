@@ -1,0 +1,22 @@
+type Member {
+  memberSeq: Long!
+  memberId: String!
+  name: String
+  age: Int
+  gender: String
+}
+
+input MemberParam {
+  memberId: Long!
+}
+
+# 루트 쿼리 (Root Query)
+type Query {
+getMember(id: Int!) : Member!
+}
+
+# 루트 뮤테이션 (Root Mutation)
+type Mutation {
+createMember(memberParam: MemberParam) : Member!
+deleteMember(id: Int!) : Boolean!
+}
